@@ -28,7 +28,7 @@ export class ProductComponent implements OnInit {
   }
 
   private getProductPage(page: number, size:number) {
-    this.productService.getProducts(page, size)
+    this.productService.getProducts(page,size)
       .subscribe(page => this.page = page);
   }
 
