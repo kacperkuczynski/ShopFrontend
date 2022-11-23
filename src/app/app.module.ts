@@ -19,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     FullpageModule,
     FullpageadminModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
