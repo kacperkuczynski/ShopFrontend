@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { __values } from 'tslib';
 import { AdminMessageService } from '../admin-message.service';
 import { AdminProductUpdateService } from './admin-product-update.service';
 import { AdminProductUpdate } from './model/adminProductUpdate';
@@ -15,6 +16,9 @@ export class AdminProductUpdateComponent implements OnInit {
 
   product!: AdminProductUpdate;
   productForm!: FormGroup;
+  imageForm!: FormGroup;
+  requiredFileTypes = "image/jpeg, image/png";
+  image: string | null = null;
 
   constructor(
     private router: ActivatedRoute,
@@ -35,6 +39,10 @@ export class AdminProductUpdateComponent implements OnInit {
         currency: ['PLN', [Validators.required]]
     });
 
+    this.imageForm = this.formBuilder.group({
+      file: ['']
+    })
+
   }
 
   getProduct() {
@@ -50,7 +58,8 @@ export class AdminProductUpdateComponent implements OnInit {
       description: this.productForm.get('description')?.value,
       category: this.productForm.get('category')?.value,
       price: this.productForm.get('price')?.value,
-      currency: this.productForm.get('currency')?.value
+      currency: this.productForm.get('currency')?.value,
+      image: this.image
     } as AdminProductUpdate).subscribe({
       next: product => {
         this.mapFormValues(product);
@@ -60,14 +69,31 @@ export class AdminProductUpdateComponent implements OnInit {
     });
   }
 
+  uploadFile(){
+    let formData = new FormData();
+    formData.append('file', this.imageForm.get('file')?.value);//file z backendu
+    this.adminProductUpdateService.uploadImage(formData)
+    .subscribe(result => this.image = result.filename);
+  }
+
+  onFileChange(event: any){
+    if(event.target.files.length > 0){
+    this.imageForm.patchValue({
+      file: event.target.files[0]
+    });
+  }
+  }
+
+
 
   private mapFormValues(product: AdminProductUpdate): void {
-    return this.productForm.setValue({
+    this.productForm.setValue({
       name: product.name,
       description: product.description,
       category: product.category,
       price: product.price,
       currency: product.currency
     });
+    this.image = product.image;
   }
 }
