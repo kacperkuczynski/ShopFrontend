@@ -6,5 +6,6 @@ export interface AdminProductUpdate{
     price: number,
     currency: string,
     image: string,
-    slug: string
+    slug: string,
+    fullDescription: string
 }
