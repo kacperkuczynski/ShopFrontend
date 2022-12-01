@@ -2,7 +2,7 @@ export interface AdminProductUpdate{
     id: number,
     name: string,
     description: string,
-    category: string,
+    categoryId: number,
     price: number,
     currency: string,
     image: string,
