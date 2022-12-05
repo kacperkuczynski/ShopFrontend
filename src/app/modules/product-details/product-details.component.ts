@@ -10,7 +10,7 @@ import { ProductDetailsService } from './product-details.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  product!: ProductDetails;
+  product: ProductDetails | undefined;
 
   constructor(
     private productDetailsService: ProductDetailsService,
