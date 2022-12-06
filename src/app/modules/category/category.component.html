@@ -8,7 +8,7 @@
         <div flexLayout="row">
             <a routerLink="{{'/products/' + product.slug}}">
             <img *ngIf="!product?.image" src="/assets/image-placeholder.png" mat-card-lg-image class="productImage">
-            <img *ngIf="product?.image" src="{{'/api/data/productImage/' + product?.image}}" width="350" lass="productImage">
+            <img *ngIf="product?.image" src="{{'/api/data/productImage/' + product.image}}" width="350" lass="productImage">
     
         </a>
             <mat-card-content fxFlex class="productContent">{{product.description}}</mat-card-content>

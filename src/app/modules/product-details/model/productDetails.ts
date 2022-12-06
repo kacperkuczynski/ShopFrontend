@@ -1,4 +1,7 @@
+import { Review } from "./review";
+
 export interface ProductDetails{
+    id:number,
     name: string,
     description: string,
     category: string,
@@ -6,5 +9,6 @@ export interface ProductDetails{
     currency: string,
     image: string,
     slug:string,
-    fullDescription: string
+    fullDescription: string,
+    reviews: Array<Review>
 }
