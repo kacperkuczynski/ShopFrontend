@@ -19,6 +19,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatButtonModule,
     MatListModule,
+    MatCardModule,
     MatPaginatorModule,
     MatTableModule,
     MatInputModule,

@@ -17,17 +17,17 @@ export class CategoryComponent implements OnInit, OnDestroy {
   private sub!: Subscription;
 
   constructor(
-    private cateogryService: CategoryService,
+    private categoryService: CategoryService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
-
+  
   ngOnInit(): void {
     this.sub = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => this.getCategoryWithProducts(0, 10));
-    
+
     this.getCategoryWithProducts(0, 10);
   }
 
@@ -35,13 +35,13 @@ export class CategoryComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  getCategoryWithProducts(page: number, size: number){
+  getCategoryWithProducts(page: number, size: number) {
     let slug = this.route.snapshot.params['slug'];
-    this.cateogryService.getCategoryWithProducts(slug, page, size)
-    .subscribe(categoryProducts => this.categoryProducts = categoryProducts);
+    this.categoryService.getCategoryWithProducts(slug, page, size)
+      .subscribe(categoryProducts => this.categoryProducts = categoryProducts);
   }
 
-  onPageChange(event: PageEvent){
+  onPageChange(event: PageEvent) {
     this.getCategoryWithProducts(event.pageIndex, event.pageSize);
   }
 
