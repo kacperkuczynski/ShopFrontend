@@ -11,6 +11,7 @@ import { AdminProductUpdateComponent } from './modules/admin/admin-product/admin
 import { AdminProductComponent } from './modules/admin/admin-product/admin-product.component';
 import { AdminReviewComponent } from './modules/admin/admin-review/admin-review.component';
 import { AdminComponent } from './modules/admin/admin.component';
+import { CartComponent } from './modules/cart/cart.component';
 import { CategoryComponent } from './modules/category/category.component';
 import { HomeComponent } from './modules/home/home.component';
 import { LoginComponent } from './modules/login/login.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
       {path:'products', component:ProductComponent},
       {path:'products/:slug', component:ProductDetailsComponent},
       {path:'categories/:slug', component:CategoryComponent},
+      {path:'cart', component:CartComponent},
 
       
     ]
