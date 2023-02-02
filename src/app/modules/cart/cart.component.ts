@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,16 +26,16 @@ export class CartComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private cartIconService: CartIconService,
-    // private location: Location
+    private location: Location
     ) { }
 
   ngOnInit(): void {
     let id = Number(this.route.snapshot.queryParams['productId']);
     if(id > 0) {
-      // this.isProductAdded = true;
+      this.isProductAdded = true;
       this.addToCart(id);
     } else {
-      // this.isProductAdded = false;
+      this.isProductAdded = false;
       this.getCart();
     }
 
@@ -111,6 +112,6 @@ export class CartComponent implements OnInit {
   }
   
   back(){
-    // this.location.historyGo(this.isProductAdded ? -2 : -1);
+    this.location.historyGo(this.isProductAdded ? -2 : -1);
   }  
 }
