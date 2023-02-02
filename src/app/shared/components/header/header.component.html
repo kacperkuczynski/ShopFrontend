@@ -8,6 +8,7 @@
         <button mat-flat-button routerLink="/products">Produkty</button>
         <span></span>
         <button mat-flat-button routerLink="/login">Zaloguj</button>
-        <a routerLink="/cart"><mat-icon color="warn" class="shoppingBasket">shopping_basket</mat-icon></a>
+        <a routerLink="/cart"><mat-icon color="warn" class="shoppingBasket"
+            matBadge="{{cartProductCounter}}" matBadgeColor="warn">shopping_basket</mat-icon></a>
     </div>
 </header>
