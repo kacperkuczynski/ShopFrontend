@@ -1,10 +1,7 @@
 <header flexLayout="column" fxLayoutAlign="start center">
-    <div fxFlex fxLayoutAlign="start end" fxLayoutGap="15">
-        <mat-icon color="warn" class="logoIcon">store</mat-icon>
+    <div fxFlex fxLayoutAlign="start end" fxLayoutGap="10">
+        <mat-icon color="accent" class="logoicon">store</mat-icon>
         <span class="logo">Shop panel</span>
-    </div>
-    <div>
-        
     </div>
 </header>
 <div flexLayout="row" fxFlex>
@@ -15,9 +12,8 @@
                 <mat-list-option><a routerLink="/admin/products">Produkty</a></mat-list-option>
                 <mat-list-option><a routerLink="/admin/categories">Kategorie</a></mat-list-option>
                 <mat-list-option><a routerLink="/admin/reviews">Opinie</a></mat-list-option>
-
-                </mat-selection-list>
-                
+                <mat-list-option><a routerLink="/admin">Link</a></mat-list-option>
+              </mat-selection-list>
         </div>
     </div>
     <div fxFlex class="content">
@@ -25,4 +21,3 @@
         <router-outlet></router-outlet>
     </div>
 </div>
-

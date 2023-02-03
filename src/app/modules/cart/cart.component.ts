@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { CartSummary } from '../common/model/cart/cartSummary';
+import { CartSummaryItem } from '../common/model/cart/cartSummaryItem';
 import { CartIconService } from '../common/service/cart-icon.service';
 import { CartService } from './cart.service';
-import { CartSummary } from './model/cartSummary';
-import { CartSummaryItem } from './model/cartSummaryItem';
+
 
 @Component({
   selector: 'app-cart',

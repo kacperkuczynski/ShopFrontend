@@ -3,7 +3,6 @@ import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { CategoryService } from './category.service';
-import { Category } from './model/category';
 import { CategoryProducts } from './model/categoryProducts';
 
 @Component({
@@ -22,7 +21,6 @@ export class CategoryComponent implements OnInit, OnDestroy {
     private router: Router
   ) { }
 
-  
   ngOnInit(): void {
     this.sub = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)

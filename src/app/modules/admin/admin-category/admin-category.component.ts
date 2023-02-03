@@ -11,7 +11,7 @@ import { AdminCategoryService } from './admin-category.service';
 })
 export class AdminCategoryComponent implements OnInit {
 
-  displayedColumns: string[] = ["id", "name", "actions"];
+  displayedColumns: string[] = [ "id", "name", "actions"];
   data: Array<AdminCategoryNameDto> = [];
   
   @ViewChild(MatTable) table!: MatTable<any>;
@@ -27,19 +27,18 @@ export class AdminCategoryComponent implements OnInit {
 
   getCategories(){
     this.adminCategoryService.getCategories()
-    .subscribe(categories => this.data = categories);
+      .subscribe(categories => this.data = categories);
   }
 
-  confirmDelete(element: AdminCategoryNameDto){
-    this.dialogService.openConfirmDialog("Czy napewno chcesz usunąć kategorię ?")
+  confirmDelete(element: AdminCategoryNameDto) {
+    this.dialogService.openConfirmDialog("Czy na pewno chcesz usunąć kategorię?")
     .afterClosed()
     .subscribe(result => {
-      if(result){
-        //usuń
+      if(result) {
         this.adminCategoryService.delete(element.id)
           .subscribe(() => {
             this.data.forEach((value, index) => {
-              if(element == value){
+              if(element == value) {
                 this.data.splice(index, 1);
                 this.table.renderRows();
               }
@@ -48,5 +47,4 @@ export class AdminCategoryComponent implements OnInit {
       }
     });
   }
-
 }
