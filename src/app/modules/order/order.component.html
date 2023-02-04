@@ -109,6 +109,21 @@
                         <div class="summary"> Wartość: </div>
                         <div class="summary"> <b>{{cartSummary?.summary?.grossValue}}</b></div>
                     </div>
+                    <div>
+                        <h2>Dostawa</h2>
+                        <mat-radio-group fxLayout="column" formControlName="shipment">
+                            <mat-radio-button class="shipmentRadioButton" *ngFor="let shipment of initData?.shipment"
+                                [value]="shipment" [checked]="shipment.defaultShipment" >
+                                <span class="shipment-1">{{shipment.name}} </span>
+                                <span class="shipment-2">{{shipment.price}} PLN</span>
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div fxLayoutAlign="end">
+                    <div class="orderTotal">Całkowita kwota do zapłaty:
+                        <span class="orderTotalValue">{{cartSummary?.summary?.grossValue + shipment?.value.price}} PLN</span>
+                    </div>
                 </div>
                 <div fxLayoutAlign="end start">
                     <button mat-flat-button color="accent" class="orderButton">Zamawiam i płacę</button>

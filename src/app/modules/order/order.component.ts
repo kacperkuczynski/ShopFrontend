@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { CartSummary } from '../common/model/cart/cartSummary';
+import { InitData } from './model/InitData';
 import { OrderDto } from './model/orderDto';
 import { OrderSummary } from './model/orderSummary';
 import { OrderService } from './order.service';
@@ -16,6 +17,7 @@ export class OrderComponent implements OnInit {
   cartSummary!: CartSummary;
   formGroup!: FormGroup;
   orderSummary!: OrderSummary;
+  initData!: InitData;
 
   private statuses = new Map<string, string>([
     ["NEW", "Nowe"],
@@ -37,8 +39,9 @@ export class OrderComponent implements OnInit {
       city: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
+      shipment: ['', Validators.required],
     });
-
+    this.getinitData();
   }
 
   checkCartEmpty(){
@@ -58,12 +61,27 @@ export class OrderComponent implements OnInit {
         email: this.formGroup.get('email')?.value,
         phone: this.formGroup.get('phone')?.value,
         cartId: Number(this.cookieService.get("cartId")),
+        shipmentId: Number(this.formGroup.get('shipment')?.value.id)
       } as OrderDto)
       .subscribe(orderSummary => {
         this.orderSummary = orderSummary;
         this.cookieService.delete("cartId");
       })
     }
+  }
+
+  getinitData(){
+    this.orderService.getInitData()
+    .subscribe(initData => {
+      this.initData = initData;
+      this.setDefaultShipment();
+    });
+  }
+
+  setDefaultShipment(){
+    this.formGroup.patchValue({"shipment": this.initData.shipment
+    .filter(shipment => shipment.defaultShipment === true)[0]
+  });
   }
 
   getStatuses(status: string){
@@ -91,5 +109,7 @@ export class OrderComponent implements OnInit {
   get phone(){
     return this.formGroup.get("phone");
   }
-
+  get shipment(){
+    return this.formGroup.get("shipment");
+  }
 }
