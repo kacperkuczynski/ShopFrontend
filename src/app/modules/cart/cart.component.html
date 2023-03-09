@@ -20,7 +20,7 @@
                 </div>
                 <div class="cart-col-2">{{item.value?.product?.name}}</div>
                 <div class="cart-col-3"><input formControlName="quantity" class="quantityInput"></div>
-                <div class="cart-col-4">{{item.value?.lineValue}}</div>
+                <div class="cart-col-4">{{item.value?.lineValue}} PLN</div>
                 <div class="cart-col-5">
                     <button mat-icon-button (click)="deleteItem(item.value?.id)"><mat-icon>delete</mat-icon></button>
                 </div>
@@ -32,7 +32,7 @@
     </div>
     <div fxLayoutAlign="end start">
         <div class="summary"> Wartość: </div>
-        <div class="summary"> <b>{{summary?.summary?.grossValue}}</b></div>
+        <div class="summary"> <b>{{summary?.summary?.grossValue}} PLN</b></div>
     </div>
     <div>
         <button mat-flat-button color="warn" (click)="back()">Powrót do zakupów</button>

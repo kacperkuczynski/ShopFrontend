@@ -105,12 +105,12 @@
                             </div>
                             <div class="cart-col-2">{{item.product?.name}}</div>
                             <div class="cart-col-3">{{item.quantity}}</div>
-                            <div class="cart-col-4">{{item.lineValue}}</div>
+                            <div class="cart-col-4">{{item.lineValue}} PLN</div>
                         </div>
                     </div>
                     <div fxLayoutAlign="end start">
                         <div class="summary"> Wartość: </div>
-                        <div class="summary"> <b>{{cartSummary?.summary?.grossValue}}</b></div>
+                        <div class="summary"> <b>{{cartSummary?.summary?.grossValue}} PLN</b></div>
                     </div>
                     <div>
                         <h2>Dostawa</h2>
@@ -134,6 +134,9 @@
                     <div class="orderTotal">Całkowita kwota do zapłaty:
                         <span class="orderTotalValue">{{cartSummary?.summary?.grossValue + shipment?.value.price}} PLN</span>
                     </div>
+                </div>
+                <div *ngIf="errorMessage" class="errorMessage" fxLayoutAlign="ent start">
+                    Coś poszło źle. Spróbuj ponownie później.
                 </div>
                 <div fxLayoutAlign="end start">
                     <button mat-flat-button color="accent" class="orderButton">Zamawiam i płacę</button>
