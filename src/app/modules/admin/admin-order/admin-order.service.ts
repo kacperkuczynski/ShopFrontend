@@ -32,4 +32,8 @@ export class AdminOrderService {
     );
   }
 
+  getSalesStatistics(): Observable<any>{
+    return this.http.get("/api/admin/orders/stats");
+  }
+
 }
