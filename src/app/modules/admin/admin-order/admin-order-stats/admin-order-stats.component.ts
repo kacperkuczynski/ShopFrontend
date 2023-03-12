@@ -53,8 +53,9 @@ export class AdminOrderStatsComponent implements AfterViewInit {
       this.data.datasets[0].data = stats.order;
       this.data.datasets[1].data = stats.sale;
       this.chart.update();
-      this.ordersCount = stats.order.reduce((acc: number, value: number) => acc + value);
-      this.salesSum = stats.sale.reduce((acc: number, value: number) => acc + value);
+      this.ordersCount = stats.ordersCount;
+      this.salesSum = stats.salesSum;
+
     });
   }
   setupChart() {
