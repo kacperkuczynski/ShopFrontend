@@ -19,7 +19,7 @@ export class AdminLoginComponent implements OnInit {
     private adminLoginService: AdminLoginService,
     private jwtService: JwtService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
@@ -28,17 +28,20 @@ export class AdminLoginComponent implements OnInit {
     })
   }
 
-  submit(){
-    if(this.formGroup.valid){
+  submit() {
+    if (this.formGroup.valid) {
       this.adminLoginService.login(this.formGroup.value)
-      .subscribe({
-        next: (response) => {
-          this.loginError = false;
-          this.jwtService.setToken(response.token);
-          this.router.navigate(["/admin"]);
-        },
-        error: () => this.loginError = true
-      })
+        .subscribe({
+          next: (response) => {
+            this.loginError = false;
+            if (response.adminAccess) {
+              this.jwtService.setToken(response.token);
+              this.jwtService.setAdminAccess(true);
+            }
+            this.router.navigate(["/admin"]);
+          },
+          error: () => this.loginError = true
+        })
     }
   }
 
