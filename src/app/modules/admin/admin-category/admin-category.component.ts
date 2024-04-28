@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTable } from '@angular/material/table';
+import { MatLegacyTable as MatTable } from '@angular/material/legacy-table';
 import { AdminConfirmDialogService } from '../common/service/admin-confirm-dialog.service';
 import { AdminCategoryNameDto } from '../common/dto/adminCategoryNameDto';
 import { AdminCategoryService } from './admin-category.service';
