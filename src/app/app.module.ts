@@ -9,8 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { FullpageadminemptyModule } from './layouts/fullpageadminempty/fullpageadminempty.module';
-import { JwtInterceptor } from './modules/admin/common/interceptor/jwt.interceptor';
+import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
 import { AdminAuthorizeGuard } from './modules/admin/common/guard/adminAuthorizeGuard';
+import { ProfileComponent } from './modules/profile/profile.component';
 
 @NgModule({
   declarations: [
