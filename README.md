@@ -15,34 +15,36 @@ The application is intended to create an online store enabling efficient and saf
 ####  Below photos attached :point_down:
  1. Public panel
     1. Product List
-![listaproduktow](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/b8ab32c3-59c7-46bd-9de9-0cb07fad90eb)
+       ![listaproduktow](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/b8ab32c3-59c7-46bd-9de9-0cb07fad90eb)
 
-    3.  Product Detail
+    2.  Product Detail
        ![produktZOpinia](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/4715a024-17af-41e1-8038-26784b3569ac)
 
-    4.  Basket
+    3.  Basket
        ![koszyk](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/dfbdde5d-ac28-4956-9e09-d1c6aa36026b)
 
-    5.  Information after placing the order
+    4.  Information after placing the order
       ![ZamowienieZlozone](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/e7498abf-e5ee-4b73-bdf2-821ada0058be)
 
  2. Admin panel
+
     1. Product List
-   ![Lista produktów](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/7cf6ec47-2c52-4ecb-ac78-b7b13752e849)
+       ![Lista produktów](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/7cf6ec47-2c52-4ecb-ac78-b7b13752e849)
+
     2. Orders
-![zamowienia](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/72f72cd4-76e1-4e94-9d35-620743bc1396)
+       ![zamowienia](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/72f72cd4-76e1-4e94-9d35-620743bc1396)
 
     3. Categories
-![kategorie](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/5d3908f6-4e22-4557-b90b-0fcce9921482)
+       ![kategorie](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/5d3908f6-4e22-4557-b90b-0fcce9921482)
 
     4. Opinions
-![opinie](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/bf844fe0-ea9a-40d9-960f-63ab76cb5d38)
+       ![opinie](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/bf844fe0-ea9a-40d9-960f-63ab76cb5d38)
 
     5. Sales chart
-![wykres](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/927316b6-c923-400d-ab8f-be0df343720f)
+       ![wykres](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/927316b6-c923-400d-ab8f-be0df343720f)
 
     6. Add product
-![dodajProdukt](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/3a16d333-3f2e-470e-8d45-68d121a26887)
+       ![dodajProdukt](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/3a16d333-3f2e-470e-8d45-68d121a26887)
 
 
 
