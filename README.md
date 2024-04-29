@@ -11,6 +11,24 @@ The application is intended to create an online store enabling efficient and saf
 <br/> :point_right: Germany
 <br/> :point_right: Czech
 <br/> :point_right: English
+####  Below photos attached :point_down:
+ 1. Public panel
+    1. Product List
+       ![Lista produktów](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/7cf6ec47-2c52-4ecb-ac78-b7b13752e849)
+       
+    3.  Product Detail
+       ![produktZOpinia](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/4715a024-17af-41e1-8038-26784b3569ac)
+
+    4.  Basket
+       ![koszyk](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/dfbdde5d-ac28-4956-9e09-d1c6aa36026b)
+
+    5.  Information after placing the order
+      ![ZamowienieZlozone](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/e7498abf-e5ee-4b73-bdf2-821ada0058be)
+
+ 2. Admin panel
+    1. Product List
+       ![Lista produktów](https://github.com/kacperkuczynski/ShopFrontend/assets/59393105/7cf6ec47-2c52-4ecb-ac78-b7b13752e849)
+
 ### Application development plan
 #### Technical :factory:
 1. change angular-flex-layout (deprecated) 
